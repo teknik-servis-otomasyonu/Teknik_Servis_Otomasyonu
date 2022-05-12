@@ -1,3 +1,3 @@
 # Teknik_Servis_Otomasyonu
 
-başlamaya Hzırmıyız Gençler
+YAYLA KADAR GÖTÜM OLSA TEK ÇOBANIM SEN OLMAZDIN.

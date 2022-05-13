@@ -2,5 +2,5 @@ x ="MERHABA BEYLER"
 print(x)
 x="merhaba sana da"
 print(x)
-x=""sa""
+x="sa"
 print(X)

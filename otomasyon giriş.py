@@ -18,4 +18,3 @@ class Anaekran:
         self.actionPersnel_G_ncelle_Sil.triggered.connect(self.fpersonelgs)
         self.tableWidget.setRowCount(0)
         self.facik_isler()
-.

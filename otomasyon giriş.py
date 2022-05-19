@@ -15,6 +15,8 @@ class Anaekran:
         self.actionPersonel_Ekle.triggered.connect(self.personel_ekle)
         self.actionDevam_Eden_Talepler.triggered.connect(self.karsilama)
         self.actionKapanan_Talepler.triggered.connect(self.fkapanan)
-        self.actionPersnel_G_ncelle_Sil.triggered.connect(self.fpersonelgs)
-        self.tableWidget.setRowCount(0)
-        self.facik_isler()
+        self.actionPersnel_G_ncelle_Sil.triggered.connect(self.fpersonelgs
+                                                          
+                                                          
+                                                          
+       # PyQt5 ile arayüz oluşturacağız biraz bakın youtube dan falan araştırın

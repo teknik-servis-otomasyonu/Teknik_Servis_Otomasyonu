@@ -38,7 +38,8 @@ class Otomasyon():
         ürünadı = input("Arıza kaydı oluşturacağınız ürün adı: ")
         ürünarıza = input ("Arızanın ne olduğunu düşünüyorsunuz: ") 
         açıkadres = input("Adresinizi  Giriniz: ") 
-
+        garantisüresi = input("garanti süresini giriniz")
+        tarih = input("talepte bulunduğunuz tarihi giriniz")
         with open("Arızatalebi.txt","r") as dosya:
             arızatalebiListesi = dosya.readlines()   
         if len(arızatalebiListesi) == 0:
@@ -48,7 +49,7 @@ class Otomasyon():
                 id = int(dosya.readlines()[-1].split(")")[0]) + 1
         
         with open("Arızatalebi.txt","a+") as dosya:
-            dosya.write("{}){}-{}-{}-{}-{}\n".format(id,isim,soyisim,ürünadı,ürünarıza,açıkadres))
+            dosya.write("{}){}-{}-{}-{}-{}-{}-{}\n".format(id,isim,soyisim,ürünadı,ürünarıza,açıkadres,garantisüresi,tarih))
     
     def arızaCikar(self):
         pass

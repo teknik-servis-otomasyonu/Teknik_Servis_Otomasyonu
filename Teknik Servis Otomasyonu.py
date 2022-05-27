@@ -13,8 +13,8 @@ class Otomasyon():
             self.soyisimGir()
         if secim == 3:
             self.arızaEkle()
-        if secim == 4:
-            self.arızaCikar()
+        #if secim == 4:
+            #self.arızaCikar()
         if secim == 5:
             self.arızaCinsi()
         if secim == 6:
@@ -38,6 +38,9 @@ class Otomasyon():
         ürünadı = input("Arıza kaydı oluşturacağınız ürün adı: ")
         ürünarıza = input ("Arızanın ne olduğunu düşünüyorsunuz: ") 
         açıkadres = input("Adresinizi  Giriniz: ") 
+        garantisüresi = input("Garantisinin bitmesine kalan süreyi giriniz: ")
+        tarih = input("Talebi oluşturduğunuz tarihi giriniz: ")
+
 
         with open("Arızatalebi.txt","r") as dosya:
             arızatalebiListesi = dosya.readlines()   
@@ -48,7 +51,7 @@ class Otomasyon():
                 id = int(dosya.readlines()[-1].split(")")[0]) + 1
         
         with open("Arızatalebi.txt","a+") as dosya:
-            dosya.write("{}){}-{}-{}-{}-{}\n".format(id,isim,soyisim,ürünadı,ürünarıza,açıkadres))
+            dosya.write("{}){}-{}-{}-{}-{}-{}-{}\n".format(id,isim,soyisim,ürünadı,ürünarıza,açıkadres,garantisüresi,tarih))
     
     def arızaCikar(self):
         pass

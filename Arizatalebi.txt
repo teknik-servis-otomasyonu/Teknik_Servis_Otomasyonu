@@ -1,0 +1,56 @@
+Müşteri adı: ercan
+Müşteri soyadı: kara
+Ürün adı: buz dolabı
+Ürün şikayeti: sıcaklık
+Müşterinin açık adresi: bursa\nilüfer
+Ürünün garanti süresi: 2 ay
+Tarih: 28/05/2022
+------------
+Müşteri adı: mehmet
+Müşteri soyadı: ak
+Ürün adı: fırın
+Ürün şikayeti: doğal gaz
+Müşterinin açık adresi: antalya
+Ürünün garanti süresi: 3 ay
+Tarih: 28.05.2022
+------------
+Müşteri adı: Ercan
+Müşteri soyadı: Kara
+Ürün adı: Fırın
+Ürün şikayeti: Tüp
+Müşterinin açık adresi: bursa/nilüfer/25
+Ürünün garanti süresi: 6 ay kaldı
+Tarih: 28.05.2022
+------------
+Müşteri adı: musti
+Müşteri soyadı: kaya
+Ürün adı: fırın
+Ürün şikayeti: tüp
+Müşterinin açık adresi: şehreküstü
+Ürünün garanti süresi: 2 ay kaldı
+Tarih: 29.05.2022
+------------
+Müşteri adı: murat 
+Müşteri soyadı: aka
+Ürün adı: asda
+Ürün şikayeti: sda
+Müşterinin açık adresi: asd
+Ürünün garanti süresi: 
+Tarih: sd
+------------
+Müşteri adı: gvı
+Müşteri soyadı: jgıy
+Ürün adı: gv
+Ürün şikayeti: ugvu
+Müşterinin açık adresi: jhgvı
+Ürünün garanti süresi: hgvı
+Tarih: kjh
+------------
+Müşteri adı: mustafa
+Müşteri soyadı: alagöz
+Ürün adı: difriz
+Ürün şikayeti: buzlama
+Müşterinin açık adresi: odunluk
+Ürünün garanti süresi: 6 ay
+Tarih: 29.05.2022
+------------

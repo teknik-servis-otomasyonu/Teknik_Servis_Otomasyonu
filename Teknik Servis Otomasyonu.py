@@ -15,15 +15,15 @@ class Otomasyon():
         if secim == 2:
             self.şikayetGir()
         if secim == 3:
-            self.arızaEkle()
+            self.arizaEkle()
         if secim == 4:
-            self.arızaCikar()
+            self.arizaCikar()
         if secim == 5:
-            self.arızaCinsi()
+            self.arizaCinsi()
         if secim == 6:
-            self.arızaAdres()
+            self.arizaAdres()
         if secim == 7:
-            self.arızaTarih()
+            self.arizaTarih()
         if secim == 8:
             self.yetkilipersonel()
     def menuSecim(self):
@@ -37,67 +37,41 @@ class Otomasyon():
         pass
     def şikayetGir(self):
         pass
-    def arızaEkle(self):
-        id = 1
-        isim = input("Adınızı Giriniz: ") 
-        soyisim = input("Soyadınızı Giriniz: ") 
-        ürünadı = input("Arıza kaydı oluşturacağınız ürün adı: ")
-        ürünarıza = input ("Arızanın ne olduğunu düşünüyorsunuz: ") 
-        açıkadres = input("Adresinizi  Giriniz: ") 
-        garantisüresi = input("garanti süresini giriniz: ")
-        tarih = input("talepte bulunduğunuz tarihi giriniz: ")
-       
-       
-        with open("Arızatalebi.txt","r") as dosya:
-            arızatalebiListesi = dosya.readlines()   
-        
-        if len(arızatalebiListesi) == 0:
-            id = 1
-        else:            
-            with open("Arızatalebi.txt","r") as dosya:
-                id = int(dosya.readlines()[-1].split(")")[0]) + 1
-        
-        with open("Arızatalebi.txt","a+") as dosya:
-            dosya.write("{}){}-{}-{}-{}-{}-{}-{}\n".format(id,isim,soyisim,ürünadı,ürünarıza,açıkadres,garantisüresi,tarih))
-    
-    def arızaCikar(self):
-        with open ("Arızatalebi.txt","r") as dosya:
-            arızatalebi = dosya.readlines()
+    def arizaEkle(self):
+        print("Teknik Servis Otomasyonu'na Hoşgeldiniz\n")
 
-        garızatalebi = []
+        isim = input("Adınızı giriniz: ") 
+        soyisim = input("Soyadınızı giriniz: ") 
+        urunadi = input("Arıza kaydı oluşturacağınız ürün adını giriniz: ")
+        urunariza = input ("Arızanın ne olduğunu düşünüyorsunuz: ") 
+        acikadres = input("Adresinizi  giriniz: ")
+        garantisuresi = input("Garanti sürenizi giriniz: ")
+        tarih = input("Tarihi giriniz(GG/AA/YYY): ")
 
-        for arızatalebi in arızatalebi:
-            garızatalebi.append(" ".join(arızatalebi[:-2].split("-")))
-        for arızatalebi in garızatalebi:
-            print(arızatalebi)    
-    
-        secim = int(input("lütfen çıkarmak istediğiniz arızayı seçiniz(1-{}:".format(len(garızatalebi))))
-        while secim < 1 or secim > len(garızatalebi):
-            secim = int(input("lütfen (1-{}) arasında numara seçiniz:".format(len(garızatalebi))))
+        dosya = open("Arizatalebi.txt","a",encoding="utf-8")
+        dosya.write("Müşteri adı: "+isim+"\n")
+        dosya.write("Müşteri soyadı: "+soyisim+"\n")
+        dosya.write("Ürün adı: "+urunadi+"\n")
+        dosya.write("Ürün şikayeti: "+urunariza+"\n")
+        dosya.write("Müşterinin açık adresi: "+acikadres+"\n")
+        dosya.write("Ürünün garanti süresi: "+garantisuresi+"\n")
+        dosya.write("Tarih: "+tarih+"\n")
+        dosya.write("------------\n")
 
-        arızatalebi.pop(secim - 1)
-        
-        maxsayi = len(arızatalebi)    
-        darızatalebi = []       
-        sayac = 1
-        for arızatalebi in arızatalebi:
-             darızatalebi.append(str(sayac) + "/" + arızatalebi.split(")")[1])
-             sayac += 1   
-        
-        with open("Arızatalebi.txt","w") as dosya:
-         dosya.writelines(darızatalebi)
+        print("\nTeşekkür ederiz.\n\n Arıza talebiniz başarı ile oluşturulmuştur. ")
+
+
+
     
     
     
     
     
-    
-    
-    def arızaCinsi(self):
+    def arizaCinsi(self):
         pass 
-    def arızaAdres(self): 
+    def arizaAdres(self): 
         pass
-    def arızaTarih(self):
+    def arizaTarih(self):
         pass
 
 otomasyon = Otomasyon("Teknik Servis Otomasyonu")    

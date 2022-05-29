@@ -1,6 +1,11 @@
 
 
 
+from dataclasses import dataclass
+from math import e
+from this import d
+
+
 class Otomasyon():
     def __init__(self,ad):
         self.ad = ad
@@ -9,7 +14,7 @@ class Otomasyon():
     def program(self):
         secim = self.menuSecim()
 
-      
+    
         if secim == 1:
             self.kurulumGir()
         if secim == 2:
@@ -25,18 +30,33 @@ class Otomasyon():
         if secim == 7:
             self.arizaTarih()
         if secim == 8:
-            self.yetkilipersonel()
+            self.yetkilipersonel_ogrenme()
     def menuSecim(self):
         secim =int( input("**** {} hoş geldiniz ****\n\n 1-Kurulum Yardımı \n 2-Şikayet Bildir \n 3-Arıza Ekle\n 4-Arıza Çıkar\n 5-Arıza Cinsi\n 6-Arıza Tarih:\n 7-yetkilipersonel\n\n Seçiminizi Giriniz ".format(self.ad)))
         while secim < 1 or secim > 8:
             secim = int(input("Lütfen 1 - 8 arasında belirtilen seçeneklerden birini giriniz!"))
 
-     
+    
         return secim
     def kurulumGir(self):
         pass
+    
     def şikayetGir(self):
-        pass
+
+        print("Şikayet sayfamıza hoşgeldiniz\n")
+        
+        with open ("Yetkilipersonel.txt","a+")as dosya:
+         yetkilipersonel = dosya.readlines()
+
+        şikayet_konusu =input("Şikayet Konunuz nedir?:(personel/memnuniyet)")
+        if şikayet_konusu == "personel":
+         with open("Yetkilipersonel.txt","r") as dosya: 
+            personel = dosya.readlines()
+
+       
+        personel_ismi =input("personel ismini lütfen bize bildiriniz:")
+        
+
     def arizaEkle(self):
         print("Teknik Servis Otomasyonu'na Hoşgeldiniz\n")
 
@@ -49,33 +69,73 @@ class Otomasyon():
         tarih = input("Tarihi giriniz(GG/AA/YYY): ")
 
         dosya = open("Arizatalebi.txt","a",encoding="utf-8")
-        dosya.write("Müşteri adı: "+isim+"\n")
-        dosya.write("Müşteri soyadı: "+soyisim+"\n")
-        dosya.write("Ürün adı: "+urunadi+"\n")
-        dosya.write("Ürün şikayeti: "+urunariza+"\n")
-        dosya.write("Müşterinin açık adresi: "+acikadres+"\n")
-        dosya.write("Ürünün garanti süresi: "+garantisuresi+"\n")
-        dosya.write("Tarih: "+tarih+"\n")
+        dosya.write("Musterı adı: "+isim+"\n")
+        dosya.write("Musterı soyadı: "+soyisim+"\n")
+        dosya.write("Urun adı: "+urunadi+"\n")
+        dosya.write("Urun sıkayetı: "+urunariza+"\n")
+        dosya.write("Musterının acık adresı: "+acikadres+"\n")
+        dosya.write("Urunun garantı suresı: "+garantisuresi+"\n")
+        dosya.write("Tarıh: "+tarih+"\n")
         dosya.write("------------\n")
 
         print("\nTeşekkür ederiz.\n\n Arıza talebiniz başarı ile oluşturulmuştur. ")
 
 
 
+    def arizaCikar(self):
+        with open("Arizatalebi.txt","r") as dosya:
+            arızatalebi = dosya.readlines()
+        
+        gArızatalebi = [] #gösterimde olan arıza talebleri
+
+        for arızatalebi in arızatalebi:
+            gArızatalebi.append(" ".join(arızatalebi[:-2].split("-")))
+        
+        for arızatalebi in gArızatalebi:
+            print(arızatalebi)
+        
+        secim = int(input("Lütfen Çıkarmak İstediğniz Arızanın Numarasını Giriniz(1-{}:".format(len(gArızatalebi))))
+        
+        while secim < 1 or secim > len(gArızatalebi):
+            
+            secim =  int(input(" Lütfen (1-{})) arasında numara giriniz: ".format(len(gArızatalebi))))
     
+            arızatalebi.pop(secim - 1 )
+            
+            sayac = 1
+
+            dArızatalebi = []
+
+            for arızatalebi in arızatalebi:
+                dArızatalebi.append(str(sayac) + ")" + arızatalebi.split(")")[1])
+                sayac += 1
+        
+            with open("Arizatalebi.txt","w") as dosya:
+                dosya.writelines(dArızatalebi)
+
+
+            
+        
+        print("\nTeşekkür ederiz. Arıza talebiniz başarı ile silinmiştir.\n ")
+
+
+
+
+    def yetkilipersonel_ogrenme(self):
+        pers_secim = input("yetkili personellerimizi görmek ister misiniz?(e/h)")
+        if  pers_secim == "e":
+            with open("Yetkilipersonel.txt")as dosya:
+                dosya.writelines()
     
-    
-    
-    
-    def arizaCinsi(self):
-        pass 
-    def arizaAdres(self): 
+
+
+    def arizaAdres(self):
         pass
     def arizaTarih(self):
         pass
 
-otomasyon = Otomasyon("Teknik Servis Otomasyonu")    
+otomasyon = Otomasyon("Teknik Servis Otomasyonu")   
 
 while otomasyon.calisma:
-    otomasyon.program()
+        otomasyon.program()
 

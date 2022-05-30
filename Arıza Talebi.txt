@@ -1,0 +1,22 @@
+Müşteri adı: r
+Müşteri soyadı: r
+Ürün adı: r
+Ürün şikayeti: r
+Müşterinin açık adresi: r
+Ürünün garanti süresi: ş
+------------
+Tarih:30/5/2022Müşteri adı: r
+Müşteri soyadı: r
+Ürün adı: r
+Ürün şikayeti: r
+Müşterinin açık adresi: r
+Ürünün garanti süresi: r
+------------
+Müşteri adı: r
+Müşteri soyadı: r
+Ürün adı: r
+Ürün şikayeti: r
+Müşterinin açık adresi: r
+Ürünün garanti süresi: r
+Tarih: 30/5/2022
+------------

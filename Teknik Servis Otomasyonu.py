@@ -1,6 +1,6 @@
+from io import TextIOWrapper
 import time
-
-
+import datetime
 
 
 
@@ -22,7 +22,7 @@ class Otomasyon():
         if secim == 4:
             self.musteriHizmetleri()
         if secim == 5:
-             self.web_sitemize_gözatın()   
+             self.web_sitemize_gozatın()   
     # Otomasyon menü seçim ekranı
         time.sleep(3)
     def menuSecim(self):
@@ -74,9 +74,9 @@ class Otomasyon():
             time.sleep(2)
             print(" \nA model bulaşık makinesi için kullanım kılavuzu: https://download.arcelik.com.tr/Download.UsageManuals/FACELIFT_ARCELIK/tr_TR_201712071226195_User%20Manual%20-%20Filetr_TR.pdf\nB model bulaşık makinesi için kullanım kılavuzu: https://www.miele.com.tr/pmedia/ZGA/TX2070/10274450-000-03_10274450-03.pdf\n")
         if kurulumSecim == 10:
-             time.sleep(2)
-        digerModel = str(input("Lütfen kurulum yapmak istediğiniz ürünün modelini giriniz: "))
-        print(" \n" + digerModel + " için kullanım kılavuzu linki: ****link****")
+            time.sleep(2)
+            digerModel = str(input("Lütfen kurulum yapmak istediğiniz ürünün modelini giriniz: "))
+            print(" \n" + digerModel + " için kullanım kılavuzu linki: ****link****")
 
 
         pass
@@ -118,22 +118,30 @@ class Otomasyon():
     # Ariza talebi oluşturma
     def arizaEkle(self):
         time.sleep(1)
+        #Günün tarihini getiren datetime modülü tanımlandı
+        tarih = datetime.datetime.now()
+        a = str(tarih)
+       
         isim = input("Adınızı giriniz: ") 
         soyisim = input("Soyadınızı giriniz: ") 
         urunadi = input("Arıza kaydı oluşturacağınız ürün adını giriniz: ")
         urunariza = input ("Arızanın ne olduğunu düşünüyorsunuz: ") 
         acikadres = input("Adresinizi  giriniz: ")
         garantisuresi = input("Garanti sürenizi giriniz: ")
-        tarih = input("Tarihi giriniz(GG/AA/YYY): ")
+        
 
+        #dosya adında bi parametre oluşturularak Arıza Talebi.txt adlı text dosyası oluşturuldu
         dosya = open("Arıza Talebi.txt","a",encoding="utf-8")
+        
+        
         dosya.write("Müşteri adı: "+isim+"\n")
         dosya.write("Müşteri soyadı: "+soyisim+"\n")
         dosya.write("Ürün adı: "+urunadi+"\n")
         dosya.write("Ürün şikayeti: "+urunariza+"\n")
         dosya.write("Müşterinin açık adresi: "+acikadres+"\n")
         dosya.write("Ürünün garanti süresi: "+garantisuresi+"\n")
-        dosya.write("Tarih: "+tarih+"\n")
+        #Günün tarihi gün, ay, yıl olarak tanımlanıp hata vermemesi adına string değere dönüştürülerek dosyaya yazdırıldı
+        dosya.write("Tarih: "+ str(tarih.day)+"/"+str(tarih.month)+"/"+str(tarih.year)+"\n")
         dosya.write("------------\n")
 
         print("\nTeşekkür ederiz.\nArıza talebiniz başarı ile oluşturulmuştur.\n")
@@ -154,10 +162,10 @@ class Otomasyon():
             print("\nMüşteri hizmetleri e-posta adres: ***e-posta adresi***")
         
             print("İşleminiz Başarıyla Gerçekleştirilmiştir.")
-    def web_sitemize_gözatın(self):
+    def web_sitemize_gozatın(self):
         time.sleep(0)
-        print("link yükleniyor...")
-        time.sleep(2)
+        print("Link yükleniyor...")
+        time.sleep(1)
         print(">>>  https://teknikservissciniz.unaux.com  <<<")
 
 otomasyon = Otomasyon("Teknik Servis Otomasyonu")    

@@ -8,6 +8,7 @@ class Otomasyon():
     def __init__(self,ad):
         self.ad = ad
         self.calisma = True
+        
 
     def program(self):
         secim = self.menuSecim()
@@ -30,16 +31,24 @@ class Otomasyon():
         if secim == 8:
            self.web_sıtemıze_gozatın()
         
-
+        time.sleep(2)
     def menuSecim(self):
         secim =int( input("\n**** {} hoş geldiniz ****\n\n 1-Kurulum Yardımı \n 2-Şikayet Bildir \n 3-Arıza Ekle\n 4-Arıza Çıkar\n 5-Arıza Cinsi\n 6-Arıza Tarih:\n 8-web sitemize gözatın!\n\n Seçiminizi Giriniz ".format(self.ad)))
         while secim < 1 or secim > 8:
             secim = int(input("Lütfen 1 - 8 arasında belirtilen seçeneklerden birini giriniz!"))
 
-    
+        time.sleep(1)
         return secim
     def kurulumGir(self):
-        pass
+        secim =int( input("\n\n^^^ Kurulum Ekranına Hoşgeldiniz ^^^\n\n 1-Ütü \n 2-Çamaşır Makinası \n 3-Bulaşık Makinası\n 4-Televizyon\n 5-Elektrikli Süpürge\n 6-Tost Makinesi\n 7-Elektrikli Ocak\n 8-Buzdolabı\n 9-Fırın\n\n Lütfen 1 - 9 arasında belirtilen seçeneklerden birini giriniz!".format(self.ad)))
+ 
+        while secim < 1 or secim > 9:
+            secim = int(input("Lütfen 1 - 9 arasında belirtilen seçeneklerden birini giriniz!"))
+        if secim == 1:
+            print("1.1. Makinaya bağlı su deposu doldurulur\n1.2. Makine arka buhar tahliyesi açılır\n1.3. Ana giriş şalteri açılır\n1.4. Kazan anahtarı(I) konumuna getirilir\n1.5. Arka buhar tahliye vanasından buhar geldikten 30-45 saniye sonra vana kapatılır\n1.6. Makine üzerindeki ütü anahtarı (I) konumuna getirilir\nBuhar 3 atüye geldiğinde makine çalışmaya hazırıdr.")
+
+
+
     
     def şikayetGir(self):
 

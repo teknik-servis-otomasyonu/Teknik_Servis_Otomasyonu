@@ -1,9 +1,7 @@
+import time
 
 
 
-from dataclasses import dataclass
-from math import e
-from this import d
 
 
 class Otomasyon():
@@ -30,9 +28,11 @@ class Otomasyon():
         if secim == 7:
             self.arizaTarih()
         if secim == 8:
-            self.yetkilipersonel_ogrenme()
+           self.web_sıtemıze_gozatın()
+        
+
     def menuSecim(self):
-        secim =int( input("**** {} hoş geldiniz ****\n\n 1-Kurulum Yardımı \n 2-Şikayet Bildir \n 3-Arıza Ekle\n 4-Arıza Çıkar\n 5-Arıza Cinsi\n 6-Arıza Tarih:\n 7-yetkilipersonel\n\n Seçiminizi Giriniz ".format(self.ad)))
+        secim =int( input("\n**** {} hoş geldiniz ****\n\n 1-Kurulum Yardımı \n 2-Şikayet Bildir \n 3-Arıza Ekle\n 4-Arıza Çıkar\n 5-Arıza Cinsi\n 6-Arıza Tarih:\n 8-web sitemize gözatın!\n\n Seçiminizi Giriniz ".format(self.ad)))
         while secim < 1 or secim > 8:
             secim = int(input("Lütfen 1 - 8 arasında belirtilen seçeneklerden birini giriniz!"))
 
@@ -45,7 +45,7 @@ class Otomasyon():
 
         print("Şikayet sayfamıza hoşgeldiniz\n")
         
-        with open ("Yetkilipersonel.txt","a+")as dosya:
+        with open ("Yetkilipersonel.txt","r")as dosya:
          yetkilipersonel = dosya.readlines()
 
         şikayet_konusu =input("Şikayet Konunuz nedir?:(personel/memnuniyet)")
@@ -55,7 +55,7 @@ class Otomasyon():
 
        
         personel_ismi =input("personel ismini lütfen bize bildiriniz:")
-        
+        print("\nTeşekkürler Şikayetiniz Başarıyla İletilmiştir.")
 
     def arizaEkle(self):
         print("Teknik Servis Otomasyonu'na Hoşgeldiniz\n")
@@ -120,22 +120,22 @@ class Otomasyon():
 
 
 
-
-    def yetkilipersonel_ogrenme(self):
-        pers_secim = input("yetkili personellerimizi görmek ister misiniz?(e/h)")
-        if  pers_secim == "e":
-            with open("Yetkilipersonel.txt")as dosya:
-                dosya.writelines()
-    
+            
 
 
     def arizaAdres(self):
         pass
     def arizaTarih(self):
         pass
+    def web_sıtemıze_gozatın(self):
+        time.sleep(0)
+        print("link yükleniyor...")
+        time.sleep(2)
+        print(">>>  https://teknikservissciniz.unaux.com  <<<")
+     
+    
 
 otomasyon = Otomasyon("Teknik Servis Otomasyonu")   
 
 while otomasyon.calisma:
         otomasyon.program()
-

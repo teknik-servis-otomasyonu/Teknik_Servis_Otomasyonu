@@ -35,8 +35,7 @@ class Otomasyon():
         return secim
         pass
 
-        time.sleep(3)
-        print("lütfen bekleyiniz..")
+       
     # Kurulum yardımı oluşturma
     def kurulumGir(self):
         time.sleep(2)
@@ -47,26 +46,37 @@ class Otomasyon():
             kurulumSecim = int(input("Lütfen 1 ile 10 arasında bir seçim yapınız: "))
         
         if kurulumSecim == 1:
-            print("A model buzdolabı için kullanım kılavuzu: ****link****\nB model buzdolabı için kullanım kılavuzu: ****link****\n")
+            time.sleep(1)
+            print("lütfen bekleyiniz..")
+            print("A model buzdolabı için kullanım kılavuzu:file:///C:/Users/ALCE_GUVENLIK/Downloads/tr-TR-7283020415-201807191722545-User-Manual-File-Long-tr-TR.pdf \nB model buzdolabı için kullanım kılavuzu:http://download.beko.com/Download.UsageManualsBeko/9614-nfiy-neofrost-buzdolabi-buzdolaplari-kullanim-kilavuzu-tr_TR_7264520414_BK9611NE_572706_TR.pdf\n")
         if kurulumSecim == 2:
-            print("A model fırın için kullanım kılavuzu: ****link****\nB model fırın için kullanım kılavuzu: ****link****\n")
+            time.sleep(2)
+            print("A model fırın için kullanım kılavuzu:https://statik.vestel.com.tr/webfiles/20262674_k.pdf\nB model fırın için kullanım kılavuzu:file:///C:/Users/ALCE_GUVENLIK/Downloads/tr-TR-7769570104-201912061413817-User-Manual-File-Long-tr-TR%20(1).pdf\n")
         if kurulumSecim == 3:
-            print("A model çamaşır makinesi için kullanım kılavuzu: ****link****\nB model çamaşır makinesi için kullanım kılavuzu: ****link****\n")
+            time.sleep(2)
+            print("A model çamaşır makinesi için kullanım kılavuzu:file:///C:/Users/ALCE_GUVENLIK/Downloads/tr-TR-7769570104-201912061413817-User-Manual-File-Long-tr-TR%20(1).pdf \nB model çamaşır makinesi için kullanım kılavuzu: file:///C:/Users/ALCE_GUVENLIK/Downloads/tr-TR-201902141305320-User-Manual-File-Long-tr-TR.pdf\n")
         if kurulumSecim == 4:
-            print(" \nA model derin dondurucu için kullanım kılavuzu: ****link****\nB model derin dondurucu için kullanım kılavuzu: ****link****\n")
+            time.sleep(2)
+            print(" \nA model derin dondurucu için kullanım kılavuzu:https://www.ugur.com.tr/uploads/products/100094/files/b2410000173_dikey_720ac.pdf\nB model derin dondurucu için kullanım kılavuzu: ****link****\n")
         if kurulumSecim == 5:
-            print(" \nA model ütü için kullanım kılavuzu: ****link****\nB model ütü için kullanım kılavuzu: ****link****\n")
+            time.sleep(2)
+            print(" \nA model ütü için kullanım kılavuzu: https://www.singer.com.tr/assets/img/uploads/product-files/e40cfaa91cb1052a2bfc9f77f081fc17.pdf\nB model ütü için kullanım kılavuzu:https://www.miele.com.tr/pmedia/ZGA/TX3587/10941290-000-00_10941290-00.pdf\n")
         if kurulumSecim == 6:
-            print(" \nA model klima için kullanım kılavuzu: ****link****\nB model klime için kullanım kılavuzu: ****link****\n")
+            time.sleep(2)
+            print(" \nA model klima için kullanım kılavuzu: https://www.arcelik.com.tr/destek/isitma-sogutma/klima/klimanin-sicaklik-ayari-nasil-yapilir?gclid=EAIaIQobChMI-LjbsLSH-AIVy49oCR17lAOIEAAYASAAEgJwiPD_BwE&gclsrc=aw.ds\nB model klime için kullanım kılavuzu: https://www.daikin.eu/content/dam/document-library/operation-manuals/ac/split/ftxb-c/FTXB20-35C2V1B_3PTR341266-3H_Operation%20manuals_Turkish.pdf\n")
         if kurulumSecim == 7:
-            print(" \nA model şofben için kullanım kılavuzu: ****link****\nB model şofben için kullanım kılavuzu: ****link****\n")
+            time.sleep(2)
+            print(" \nA model şofben için kullanım kılavuzu:https://urunler.demirdokum.com.tr/getattachment/05a0de2b-4d51-4b08-9f05-ce446d15e370/Kullanma-K%C4%B1lavuzu.aspx\nB model şofben için kullanım kılavuzu:https://www.baymak.com.tr/media/3085/montaj-kullanma-k%C4%B1lavuzu.pdf\n")
         if kurulumSecim == 8:
-            print(" \nA model süpürge için kullanım kılavuzu: ****link****\nB model süpürge için kullanım kılavuzu: ****link****\n")
+            time.sleep(2)  
+            print(" \nA model süpürge için kullanım kılavuzu:http://download.beko.com/Download.UsageManualsBeko/bks-5422-toz-torbasiz-elektrikli-supurge-kullanim-kilavuzu-tr_TR_201407231937801_Kullanma-20K-C4-B1lavuzu-Dosyatur-A.pdf\nB model süpürge için kullanım kılavuzu: https://manuals.plus/tr/miele/elektrikli-s%C3%BCp%C3%BCrge-k%C4%B1lavuzu-5#axzz7UmTkEXOd\n")
         if kurulumSecim == 9:
-            print(" \nA model bulaşık makinesi için kullanım kılavuzu: ****link****\nB model bulaşık makinesi için kullanım kılavuzu: ****link****\n")
+            time.sleep(2)
+            print(" \nA model bulaşık makinesi için kullanım kılavuzu: https://download.arcelik.com.tr/Download.UsageManuals/FACELIFT_ARCELIK/tr_TR_201712071226195_User%20Manual%20-%20Filetr_TR.pdf\nB model bulaşık makinesi için kullanım kılavuzu: https://www.miele.com.tr/pmedia/ZGA/TX2070/10274450-000-03_10274450-03.pdf\n")
         if kurulumSecim == 10:
-            digerModel = str(input("Lütfen kurulum yapmak istediğiniz ürünün modelini giriniz: "))
-            print(" \n" + digerModel + " için kullanım kılavuzu linki: ****link****")
+             time.sleep(2)
+        digerModel = str(input("Lütfen kurulum yapmak istediğiniz ürünün modelini giriniz: "))
+        print(" \n" + digerModel + " için kullanım kılavuzu linki: ****link****")
 
 
         pass

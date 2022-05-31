@@ -24,21 +24,26 @@ class Otomasyon():
         if secim == 5:
              self.web_sitemize_gozatın()   
     # Otomasyon menü seçim ekranı
-        time.sleep(3)
+        time.sleep(3)#3saniye sonra açılıyor (yenileniyor)
     def menuSecim(self):
         print(" \n")
-        secim =int( input("**** {}'na hoş geldiniz ****\n\nLütfen yardım talebi almak istediğiniz konuyu seçiniz: \n\n 1-Kurulum Yardımı \n 2-Şikayet Bildir \n 3-Arıza Ekle\n 4-Müşteri hizmetleri\n 5-Web Sitemize Gözatın!\n\nSeçiminizi Giriniz: ".format(self.ad)))
-        while secim < 1 or secim > 5:
+        try:#hata verebileceğini düşündüğümüz kodlar
+         secim =int( input("**** {}'na hoş geldiniz ****\n\nLütfen yardım talebi almak istediğiniz konuyu seçiniz: \n\n 1-Kurulum Yardımı \n 2-Şikayet Bildir \n 3-Arıza Ekle\n 4-Müşteri hizmetleri\n 5-Web Sitemize Gözatın!\n\nSeçiminizi Giriniz: ".format(self.ad)))
+         while secim < 1 or secim > 5:
             secim = int(input("Lütfen 1 - 4 arasında belirtilen seçeneklerden birini giriniz!"))
-
-     
+        except ValueError:#hata ayıklama işlemi (hata durumunda yapılacak işlem.)
+            print("Lütfen Sayı Değeri Giriniz!")
+        time.sleep(1)
+      
         return secim
         pass
+
 
        
     # Kurulum yardımı oluşturma
     def kurulumGir(self):
-        time.sleep(2)
+        print("Lütfen Bekleyiniz..")
+        time.sleep(1)#1 saniye kadar bekletme işlemi öncesinde lütfen bekleyiniz ikazı 
         
         kurulumSecim = int(input("\nLütfen kurulum yapmak istediğiniz ürünü seçiniz.\n\n1-Buzdolabı\n2-Fırın\n3-Çamaşır makinesi\n4-Derin Dondurucu\n5-Ütü\n6-Klima\n7-Şofben\n8-Elektrikli Süpürge\n9-Bulaşık Makinesi\n10-Diğer model\n\nSecim: "))
         
@@ -76,7 +81,8 @@ class Otomasyon():
         if kurulumSecim == 10:
             time.sleep(2)
             digerModel = str(input("Lütfen kurulum yapmak istediğiniz ürünün modelini giriniz: "))
-            print(" \n" + digerModel + " için kullanım kılavuzu linki: ****link****")
+        if  digerModel :
+            print(" \n" + digerModel + " için kullanım kılavuzu linki:>>>  https://teknikservissciniz.unaux.com  <<< ")
 
 
         pass

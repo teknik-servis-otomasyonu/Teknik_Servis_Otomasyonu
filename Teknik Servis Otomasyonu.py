@@ -1,48 +1,53 @@
+from io import TextIOWrapper
 import time
+import datetime
 
 
 
-
-
-class Otomasyon(): #öncelikle otomasyon adında bir klasörü oluşturuyoruz
-    def __init__(self,ad):#ad değişkeni atıyoruz bu sayede ad yazan yere istediğimiz isimi koyabiliriz
-        self.ad = ad #fonksiyonda kulllanacağımız ad değişkenini kaydediyoruz
-        self.calisma = True #programı çalıştırdıktan sonra sınırsız döngüde çalışabilmesi için "true" ifadesini kullanıyoruz
+class Otomasyon():
+    def __init__(self,ad):
+        self.ad = ad
+        self.calisma = True
+    # Otomasyon menü fonksiyon seçimi 
     
-    
-    def program(self): #metinbelgesini dosya içine göndererek seçim menüsü ayarlıyoruz
-        secim = self.menuSecim() #bu menüdeki secim değişkenlerini sırasıyla ayarlıyoruz
+    def program(self):
+        secim = self.menuSecim()
 
         if secim == 1:
-            self.kurulumGir() #kurulum gir secimi 1 rakamına basınca aktif olacak
+            self.kurulumGir()
         if secim == 2:
-            self.sikayetGir() 
+            self.sikayetGir()
         if secim == 3:
             self.arizaEkle()
         if secim == 4:
             self.musteriHizmetleri()
         if secim == 5:
-             self.web_sitemize_gözatın()   
+             self.web_sitemize_gozatın()   
     # Otomasyon menü seçim ekranı
-        time.sleep(3)#seçim yapıldıktan sonra 3 saniyelik bir bekleme süresi ayarlıyoruz
+        time.sleep(3)#3saniye sonra açılıyor (yenileniyor)
     def menuSecim(self):
-        print(" \n") #işleme bir satır boşlukla devam ediyoruz
-        secim =int( input("**** {}'na hoş geldiniz ****\n\nLütfen yardım talebi almak istediğiniz konuyu seçiniz: \n\n 1-Kurulum Yardımı \n 2-Şikayet Bildir \n 3-Arıza Ekle\n 4-Müşteri hizmetleri\n 5-Web Sitemize Gözatın!\n\nSeçiminizi Giriniz: ".format(self.ad)))
-        while secim < 1 or secim > 5:#kullanıcıyı karşılıyoruz ardından bir satır boşluk atttıktan sonra yardım almak istediği sonuyu sorarak seçeneklere yönlendiriyoruz
-            secim = int(input("Lütfen 1 - 4 arasında belirtilen seçeneklerden birini giriniz!"))# kullanıcının seçimi yapması gereken skala hakkında bilgi veriyoruz
-
-     
-        return secim#yazılmış olan secimlerin hepsini dönüşüme alıyoruz
+        print(" \n")
+        try:#hata verebileceğini düşündüğümüz kodlar
+         secim =int( input("**** {}'na hoş geldiniz ****\n\nLütfen yardım talebi almak istediğiniz konuyu seçiniz: \n\n 1-Kurulum Yardımı \n 2-Şikayet Bildir \n 3-Arıza Ekle\n 4-Müşteri hizmetleri\n 5-Web Sitemize Gözatın!\n\nSeçiminizi Giriniz: ".format(self.ad)))
+         while secim < 1 or secim > 5:
+            secim = int(input("Lütfen 1 - 4 arasında belirtilen seçeneklerden birini giriniz!"))
+        except ValueError:#hata ayıklama işlemi (hata durumunda yapılacak işlem.)
+            print("Lütfen Sayı Değeri Giriniz!")
+        time.sleep(1)
+      
+        return secim
         pass
+
 
        
     # Kurulum yardımı oluşturma
     def kurulumGir(self):
-        time.sleep(2)
+        print("Lütfen Bekleyiniz..")
+        time.sleep(1)#1 saniye kadar bekletme işlemi öncesinde lütfen bekleyiniz ikazı 
         
         kurulumSecim = int(input("\nLütfen kurulum yapmak istediğiniz ürünü seçiniz.\n\n1-Buzdolabı\n2-Fırın\n3-Çamaşır makinesi\n4-Derin Dondurucu\n5-Ütü\n6-Klima\n7-Şofben\n8-Elektrikli Süpürge\n9-Bulaşık Makinesi\n10-Diğer model\n\nSecim: "))
-        #kurulum seçimine giren kullanıcının kullanım kılavuzunu almak istediği ürünleri seçmesi için ürünleri alt alta sıralıyoruz
-        while kurulumSecim < 1 or kurulumSecim > 10:#1 ila 10 arası olan koşul olana kadar döngünün devam etmesi için while döngüzünü kullanıyoruz
+        
+        while kurulumSecim < 1 or kurulumSecim > 10:
             kurulumSecim = int(input("Lütfen 1 ile 10 arasında bir seçim yapınız: "))
         
         if kurulumSecim == 1:
@@ -50,7 +55,7 @@ class Otomasyon(): #öncelikle otomasyon adında bir klasörü oluşturuyoruz
             print("lütfen bekleyiniz..")
             print("A model buzdolabı için kullanım kılavuzu:file:///C:/Users/ALCE_GUVENLIK/Downloads/tr-TR-7283020415-201807191722545-User-Manual-File-Long-tr-TR.pdf \nB model buzdolabı için kullanım kılavuzu:http://download.beko.com/Download.UsageManualsBeko/9614-nfiy-neofrost-buzdolabi-buzdolaplari-kullanim-kilavuzu-tr_TR_7264520414_BK9611NE_572706_TR.pdf\n")
         if kurulumSecim == 2:
-            time.sleep(2) #bütün seçimleri belirlenen süre sonrasında açılması için ayarlıyoruz                                                                                                
+            time.sleep(2)
             print("A model fırın için kullanım kılavuzu:https://statik.vestel.com.tr/webfiles/20262674_k.pdf\nB model fırın için kullanım kılavuzu:file:///C:/Users/ALCE_GUVENLIK/Downloads/tr-TR-7769570104-201912061413817-User-Manual-File-Long-tr-TR%20(1).pdf\n")
         if kurulumSecim == 3:
             time.sleep(2)
@@ -70,34 +75,35 @@ class Otomasyon(): #öncelikle otomasyon adında bir klasörü oluşturuyoruz
         if kurulumSecim == 8:
             time.sleep(2)  
             print(" \nA model süpürge için kullanım kılavuzu:http://download.beko.com/Download.UsageManualsBeko/bks-5422-toz-torbasiz-elektrikli-supurge-kullanim-kilavuzu-tr_TR_201407231937801_Kullanma-20K-C4-B1lavuzu-Dosyatur-A.pdf\nB model süpürge için kullanım kılavuzu: https://manuals.plus/tr/miele/elektrikli-s%C3%BCp%C3%BCrge-k%C4%B1lavuzu-5#axzz7UmTkEXOd\n")
-        if kurulumSecim == 9: #
+        if kurulumSecim == 9:
             time.sleep(2)
             print(" \nA model bulaşık makinesi için kullanım kılavuzu: https://download.arcelik.com.tr/Download.UsageManuals/FACELIFT_ARCELIK/tr_TR_201712071226195_User%20Manual%20-%20Filetr_TR.pdf\nB model bulaşık makinesi için kullanım kılavuzu: https://www.miele.com.tr/pmedia/ZGA/TX2070/10274450-000-03_10274450-03.pdf\n")
-        if kurulumSecim == 10:#yapılan her seçimlerde o ürüne ait olan her iki modelinde kullanım klavUzlarının linkini kullanıcıya sunuyoruz. Bu sayede kullanıcı kurulımdan kullanım koşullarına ,istediği bütün bilgilere buradan sahip olacak
-             time.sleep(2)
-        digerModel = str(input("Lütfen kurulum yapmak istediğiniz ürünün modelini giriniz: "))
-        print(" \n" + digerModel + " için kullanım kılavuzu linki: ****link****")
+        if kurulumSecim == 10:
+            time.sleep(2)
+            digerModel = str(input("Lütfen kurulum yapmak istediğiniz ürünün modelini giriniz: "))
+        if  digerModel :
+            print(" \n" + digerModel + " için kullanım kılavuzu linki:>>>  https://teknikservissciniz.unaux.com  <<< ")
 
 
         pass
         time.sleep(2)
         print("lütfen bekleyiniz..")
     # Şikayet talebi oluşturma (text olarak kaydetme eklenecek)
-    def sikayetGir(self):#bu işlemde şikayet değişkenini ayarlıyoruz
+    def sikayetGir(self):
         time.sleep(1)
         sikayetSebebi=int(input("Şikayet sebebinizi şeçiniz:\n\n1-Personel hakkında\n2-Ürünlerimiz hakkında\n3-Diğer\n\nSeçim: "))
-        #kullanıcıya şikayet seçenekleri sunuyoruz
-        while sikayetSebebi < 1 or sikayetSebebi > 3:#1 ile 3 arasındaki seçimseçeneklerini döngüye alıyoruz
+        
+        while sikayetSebebi < 1 or sikayetSebebi > 3:
             sikayetSebebi = int(input("Lütfen 1 ile 3 arasında bir seçim yapınız: "))
         
-        if sikayetSebebi == 1:#eğer 1. seçenek seçlirse personel şikayetleri hakkında seçenekler sıralanıyor
+        if sikayetSebebi == 1:
             personelSikayet = int(input("\nPersonel hakkındaki şikaetinizi belirtiniz:\n\n1-Kaba\n2-İşini düzgün yapmıyor\n3-Ürüne zarar verme\n4-Diğer\n\nSeçim: "))
             while personelSikayet < 1 or personelSikayet > 4:
                 personelSikayet = int(input("Lütfen 1 ile 4 arasında bir seçim yapınız: "))
             if personelSikayet == 4:
                 input("Lütfen personel hakkındaki şikayetinizi belirtiniz:")
 
-        if sikayetSebebi == 2:#eğer ürün hakkında şikayet seçilirse ürün hakkındaki şikayet seçenekleri sıralanıyor
+        if sikayetSebebi == 2:
             urunSikayet = int(input("Ürün hakkındaki şikayetinizi seçiniz.\n1-Arızalı ürün \n2-Ürün gürültülü çalışıyor \n3-Diğer\nSeçim: "))
             while urunSikayet < 1 or urunSikayet > 3:
                 urunSikayet = int(input("Lütfen 1 ile 3 arasında bir seçim yapınız: "))              
@@ -106,8 +112,8 @@ class Otomasyon(): #öncelikle otomasyon adında bir klasörü oluşturuyoruz
         
         if sikayetSebebi == 3:
             sikayet = input("Lütfen şikayetinizi belirtiniz:")
-            dosya = open("Şikayet Talebi.txt","a",encoding="utf-8")#yazılan bütün şikayetler şikayet talebi dosyasına gider
-            dosya.write("Müşteri şikayeti: "+sikayet+"\n") #yazılan şikayetlerin hepsi aynı zamanda müzteri şikayeti olarak dosyaya yazılır
+            dosya = open("Şikayet Talebi.txt","a",encoding="utf-8")
+            dosya.write("Müşteri şikayeti: "+sikayet+"\n")
         
         
         print("\n\nŞikayet talebiniz alınmıştır\n")
@@ -115,32 +121,40 @@ class Otomasyon(): #öncelikle otomasyon adında bir klasörü oluşturuyoruz
         pass
         time.sleep(2)
         print("lütfen bekleyiniz..")
-    # arıza talebi oluşturuyoruz, bu şekilde kullanıcının kullandığı ürünün ve şahsi bilgilerini alıyoruz
-    def arizaEkle(self):#arıza ekleme değişkenini oluşturuyoruz
+    # Ariza talebi oluşturma
+    def arizaEkle(self):
         time.sleep(1)
+        #Günün tarihini getiren datetime modülü tanımlandı
+        tarih = datetime.datetime.now()
+        a = str(tarih)
+       
         isim = input("Adınızı giriniz: ") 
         soyisim = input("Soyadınızı giriniz: ") 
         urunadi = input("Arıza kaydı oluşturacağınız ürün adını giriniz: ")
         urunariza = input ("Arızanın ne olduğunu düşünüyorsunuz: ") 
         acikadres = input("Adresinizi  giriniz: ")
         garantisuresi = input("Garanti sürenizi giriniz: ")
-        tarih = input("Tarihi giriniz(GG/AA/YYY): ")
+        
 
+        #dosya adında bi parametre oluşturularak Arıza Talebi.txt adlı text dosyası oluşturuldu
         dosya = open("Arıza Talebi.txt","a",encoding="utf-8")
+        
+        
         dosya.write("Müşteri adı: "+isim+"\n")
         dosya.write("Müşteri soyadı: "+soyisim+"\n")
         dosya.write("Ürün adı: "+urunadi+"\n")
         dosya.write("Ürün şikayeti: "+urunariza+"\n")
         dosya.write("Müşterinin açık adresi: "+acikadres+"\n")
         dosya.write("Ürünün garanti süresi: "+garantisuresi+"\n")
-        dosya.write("Tarih: "+tarih+"\n")
+        #Günün tarihi gün, ay, yıl olarak tanımlanıp hata vermemesi adına string değere dönüştürülerek dosyaya yazdırıldı
+        dosya.write("Tarih: "+ str(tarih.day)+"/"+str(tarih.month)+"/"+str(tarih.year)+"\n")
         dosya.write("------------\n")
 
         print("\nTeşekkür ederiz.\nArıza talebiniz başarı ile oluşturulmuştur.\n")
 
         time.sleep(2)
         print("lütfen bekleyiniz..")
-    #yine aynı şekilde müşteri hizmetlerinin değişkenini ayarlıyoruz , verilen eposta adresi veya telefon numarası aracılığında müşteri ile kontak kuruyoruz
+    #Müşteri hizmetleri ile iletişime geçme
     def musteriHizmetleri(self):
         time.sleep(1)
         iletisimSecim = int(input("Müşteri hizmetleri ile iletişime geçme yönteminizi seçiniz:\n\n1-Telefon görüşmesi\n2-E-posta\nSeçim:"))
@@ -154,10 +168,10 @@ class Otomasyon(): #öncelikle otomasyon adında bir klasörü oluşturuyoruz
             print("\nMüşteri hizmetleri e-posta adres: ***e-posta adresi***")
         
             print("İşleminiz Başarıyla Gerçekleştirilmiştir.")
-    def web_sitemize_gözatın(self):
+    def web_sitemize_gozatın(self):
         time.sleep(0)
-        print("link yükleniyor...")
-        time.sleep(2)
+        print("Link yükleniyor...")
+        time.sleep(1)
         print(">>>  https://teknikservissciniz.unaux.com  <<<")
 
 otomasyon = Otomasyon("Teknik Servis Otomasyonu")    

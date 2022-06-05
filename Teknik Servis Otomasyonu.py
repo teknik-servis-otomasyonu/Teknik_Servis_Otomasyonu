@@ -53,60 +53,60 @@ class Otomasyon():
             kurulumSecim = int(input("Lütfen 1 ile 10 arasında bir seçim yapınız: "))
         
         if kurulumSecim == 1:
-            A = str(input("A MODEL BUZDOLABI İÇİN [a]:\n B MODEL BUZDOLABI İÇİN [b]:\n Lütfen Seçiminizi yapın:"))
+            A = str(input("A MODEL BUZDOLABI [a]:\n B MODEL BUZDOLABI İÇİN [b]:\n Lütfen Seçiminizi yapın:"))
             if A :"a"
-            webbrowser.open("")
+            webbrowser.open("/Downloads/tr-TR-7283020415-201807191722545-User-Manual-File-Long-tr-TR.pdf")
             if A : "b"
-            webbrowser.open("")
+            webbrowser.open("http://download.beko.com/Download.UsageManualsBeko/9614-nfiy-neofrost-buzdolabi-buzdolaplari-kullanim-kilavuzu-tr_TR_7264520414_BK9611NE_572706_TR.pdf")
         if kurulumSecim == 2:
 
             A = str(input("A MODEL FIRIN İÇİN [a]:\n B MODEL FIRIN İÇİN [b]:\nLütfen Seçiminizi yapın:"))
             if A :"a"
-            webbrowser.open("")
+            webbrowser.open("tr-TR-7769570104-201912061413817-User-Manual-File-Long-tr-TR.pdf")
             if A: "b"
-            webbrowser.open("")
+            webbrowser.open("https://media3.bsh-group.com/Documents/9000737996_F.pdf")
         if kurulumSecim == 3:
             A = str(input("A MODEL ÇAMAŞIR MAKİNESİ İÇİN [a]:\n B MODEL ÇAMAŞIR MAKİNESİ İÇİN [b]:\nLütfen Seçiminizi yapın:"))
             if A :"a"
-            webbrowser.open("")
+            webbrowser.open("https://download.arcelik.com.tr/Download.UsageManuals/FACELIFT_ARCELIK/tr_TR_Manual_7144850100_tr_TR20171222-130958-092.pdf")
             if A :"b"
-            webbrowser.open("")
+            webbrowser.open("https://media3.bsh-group.com/Documents/9001089397_A.pdf")
         if kurulumSecim == 4:
             A = str(input("A MODEL DERİN DONDURUCU İÇİN [a]:\n B MODEL DERİN DONDURUCU İÇİN [b]:\nLütfen Seçiminizi yapın:"))
             if A :"a"
-            webbrowser.open("")
+            webbrowser.open("Downloads/tr-TR-7278440111-202005111049636-User-Manual-File-Long-tr-TR.pdf")
             if A :"b"
-            webbrowser.open("")
+            webbrowser.open("https://media3.bsh-group.com/Documents/9000842200_C.pdf")
         if kurulumSecim == 5:
             A = str(input("A MODEL ÜTÜ İÇİN [a]:\n B MODEL ÜTÜ İÇİN [b]:"))
             if A :"a"
-            webbrowser.open("")
+            webbrowser.open("https://manuall.info.tr/profilo-ubs1401-utu/")
             if A : "b"
-            webbrowser.open("")
+            webbrowser.open("https://manuall.info.tr/hotpoint-ariston-si-c35-ckg-utu/")
         if kurulumSecim == 6:
             A = str(input("A MODEL KLİMA İÇİN [a]:\n B MODEL KLİMA İÇİN [b]:\nLütfen Seçiminizi yapın:"))
             if A :"a"
-            webbrowser.open("")
+            webbrowser.open("https://download.arcelik.com.tr/download.usagemanuals/12044-active-plasma-plus-serisi-ev-tipi-klima-kullanim-kilavuzu-tr_TR_5400571301_Revg.g.pdf")
             if A :"b"
-            webbrowser.open("")
+            webbrowser.open("https://manuall.info.tr/profilo-p3zma18907-klima/")
         if kurulumSecim == 7:
             A = str(input("A MODEL ŞOFBEN İÇİN [a]:\n B MODEL ŞOFBEN İÇİN [b]:\nLütfen Seçiminizi yapın:"))
             if A :"a"
-            webbrowser.open("")
+            webbrowser.open("https://www.epey.com/dosya/367582/arcelik-t-7365-b-3474.pdf/")
             if A : "b"
-            webbrowser.open("")
+            webbrowser.open("https://www.epey.com/dosya/558614/arcelik-t-7350-b-3474.pdf/")
         if kurulumSecim == 8:
             A = str(input("A MODEL SÜPÜRGE İÇİN [a]:\n B MODEL SÜPÜRGE İÇİN [b]:\nLütfen Seçiminizi yapın:"))
             if A :"a" 
-            webbrowser.open("")
+            webbrowser.open("https://manuall.info.tr/profilo-psu5b111-elektrikli-supurge/")
             if A : "b"
-            webbrowser.open("")
+            webbrowser.open("https://download.arcelik.com.tr/download.usagemanuals/32592_3_S-7430-User-Manual.pdf")
         if kurulumSecim == 9:
             A = str(input("A MODEL BULAŞIK MAKİNESİ İÇİN [a]:\n B MODEL BULAŞIK MAKİNESİ  İÇİN [b]:\nLütfen Seçiminizi yapın:"))
             if A :"a"
-            webbrowser.open("")
+            webbrowser.open("https://www.arcelik.com.tr/bulasik-makinesi/6144-bulasik-makinesi?gclid=Cj0KCQjwqPGUBhDwARIsANNwjV6zi9DUnd0ZwO62gmC3FQ0faup1jqXWW0mY1nVeC9rpP-bmoylnoykaAsqPEALw_wcB&gclsrc=aw.ds")
             if A :"b"
-            webbrowser.open("")
+            webbrowser.open("https://manuall.info.tr/profilo-bm4220eg-bulasik-makinesi/")
         if kurulumSecim == 10:
 
          digerModel = str(input("Lütfen kurulum yapmak istediğiniz ürünün modelini giriniz: "))

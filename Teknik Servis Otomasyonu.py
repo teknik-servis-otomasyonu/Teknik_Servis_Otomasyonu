@@ -180,29 +180,29 @@ class Otomasyon():
 
         print("\nTeşekkür ederiz.\nArıza talebiniz başarı ile oluşturulmuştur.\n")
 
-        time.sleep(2)
+        time.sleep(2) 
         print("lütfen bekleyiniz..")
     #Müşteri hizmetleri ile iletişime geçme
     def musteriHizmetleri(self):  #yine aynı şekilde müşteri hizmetlerinin değişkenini ayarlıyoruz , verilen eposta adresi veya telefon numarası aracılığında müşteri ile kontak kuruyoruz
         time.sleep(1)
         iletisimSecim = int(input("Müşteri hizmetleri ile iletişime geçme yönteminizi seçiniz:\n\n1-Telefon görüşmesi\n2-E-posta\nSeçim:"))
-        
-        while iletisimSecim < 1 or iletisimSecim > 2:
+        # terminalden integer değer alıyoruz.
+        while iletisimSecim < 1 or iletisimSecim > 2: # müşteri eğer birden küçük veya ikiden büyük değer girerse bir ve iki arasında bir değer girmesini istiyoruz.
                 iletisimSecim = int(input("Lütfen 1 ile 2 arasında bir seçim yapınız: "))
         
-        if iletisimSecim == 1:
+        if iletisimSecim == 1: # müşteri bir veya iki girince girdiği değeri veriyoruz.
             print("\nMüşteri hizmetleri sabit telefon numarası: ***telefon numarası***")
         if iletisimSecim == 2:
             print("\nMüşteri hizmetleri e-posta adres: ***e-posta adresi***")
         
-            print("İşleminiz Başarıyla Gerçekleştirilmiştir.")
-    def web_sitemize_gozatın(self):
+            print("İşleminiz Başarıyla Gerçekleştirilmiştir.") # işlemin gerçektiğini bildiriyoruz.
+    def web_sitemize_gozatın(self): # linkini koyduğumuz web siteye yönledirme yapıyoruz.
         time.sleep(0)
         print("Link yükleniyor...")
         time.sleep(1)
         print(">>>  http://teknikservissciniz.unaux.com  <<<")
 
-otomasyon = Otomasyon("Teknik Servis Otomasyonu")    
+otomasyon = Otomasyon("Teknik Servis Otomasyonu")    #otomasyonu tanımladık
 
-while otomasyon.calisma:
+while otomasyon.calisma: #döngüye sokuyoruz.
     otomasyon.program()

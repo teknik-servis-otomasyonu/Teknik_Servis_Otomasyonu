@@ -110,7 +110,7 @@ class Otomasyon():
         if kurulumSecim == 10:#yapılan her seçimlerde o ürüne ait olan her iki modelinde kullanım klavUzlarının linkini kullanıcıya sunuyoruz. Bu sayede kullanıcı kurulımdan kullanım koşullarına ,istediği bütün bilgilere buradan sahip olacak
 
          digerModel = str(input("Lütfen kurulum yapmak istediğiniz ürünün modelini giriniz: "))
-         print(" \n" + digerModel + " için kullanım kılavuzu linki:>>>  https://teknikservissciniz.unaux.com  <<< ")
+         print(" \n" + digerModel + " için kullanım kılavuzu linki:>>>  http://teknikservissciniz.unaux.com  <<< ")
             
 
         pass
@@ -200,7 +200,7 @@ class Otomasyon():
         time.sleep(0)
         print("Link yükleniyor...")
         time.sleep(1)
-        print(">>>  https://teknikservissciniz.unaux.com  <<<")
+        print(">>>  http://teknikservissciniz.unaux.com  <<<")
 
 otomasyon = Otomasyon("Teknik Servis Otomasyonu")    
 

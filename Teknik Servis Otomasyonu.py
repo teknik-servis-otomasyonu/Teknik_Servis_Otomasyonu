@@ -1,6 +1,6 @@
 from io import TextIOWrapper
 import time#time modülünü import ettik
-import timedate #time modülünü import ettik
+import datetime#time modülünü import ettik
 #işlem sırasında birleşimini kullanıyoruz
 import webbrowser#web sayfasını kullanabilmek için import işlemini yaptık
 
@@ -31,7 +31,7 @@ class Otomasyon():
         print(" \n")#işleme bir satır boşlukla devam ediyoru
         try:#hata verebileceğini düşündüğümüz kodlar
          secim =int( input("**** {}'na hoş geldiniz ****\n\nLütfen yardım talebi almak istediğiniz konuyu seçiniz: \n\n 1-Kurulum Yardımı \n 2-Şikayet Bildir \n 3-Arıza Ekle\n 4-Müşteri hizmetleri\n 5-Web Sitemize Gözatın!\n\nSeçiminizi Giriniz: ".format(self.ad)))
-         while secim < 1 or secim > 5::#kullanıcıyı karşılıyoruz ardından bir satır boşluk atttıktan sonra yardım almak istediği sonuyu sorarak seçeneklere yönlendiriyoruz
+         while secim < 1 or secim > 5:#kullanıcıyı karşılıyoruz ardından bir satır boşluk atttıktan sonra yardım almak istediği sonuyu sorarak seçeneklere yönlendiriyoruz
             secim = int(input("Lütfen 1 - 4 arasında belirtilen seçeneklerden birini giriniz!"))
         except ValueError:#hata ayıklama işlemi (hata durumunda yapılacak işlem.)
             print("Lütfen Sayı Değeri Giriniz!")
@@ -107,7 +107,7 @@ class Otomasyon():
             webbrowser.open("https://www.arcelik.com.tr/bulasik-makinesi/6144-bulasik-makinesi?gclid=Cj0KCQjwqPGUBhDwARIsANNwjV6zi9DUnd0ZwO62gmC3FQ0faup1jqXWW0mY1nVeC9rpP-bmoylnoykaAsqPEALw_wcB&gclsrc=aw.ds")
             if A :"b"
             webbrowser.open("https://manuall.info.tr/profilo-bm4220eg-bulasik-makinesi/")
-        if kurulumSecim == 10::#yapılan her seçimlerde o ürüne ait olan her iki modelinde kullanım klavUzlarının linkini kullanıcıya sunuyoruz. Bu sayede kullanıcı kurulımdan kullanım koşullarına ,istediği bütün bilgilere buradan sahip olacak
+        if kurulumSecim == 10:#yapılan her seçimlerde o ürüne ait olan her iki modelinde kullanım klavUzlarının linkini kullanıcıya sunuyoruz. Bu sayede kullanıcı kurulımdan kullanım koşullarına ,istediği bütün bilgilere buradan sahip olacak
 
          digerModel = str(input("Lütfen kurulum yapmak istediğiniz ürünün modelini giriniz: "))
          print(" \n" + digerModel + " için kullanım kılavuzu linki:>>>  https://teknikservissciniz.unaux.com  <<< ")

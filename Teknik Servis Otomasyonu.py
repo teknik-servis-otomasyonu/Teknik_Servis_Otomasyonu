@@ -1,8 +1,8 @@
 from io import TextIOWrapper
 import time#time modülünü import ettik
-import datetime#time modülünü import ettik
+import datetime#time modülünü import ettik bu kütüphane sayesinde taleplere otomatik tarih atılıyor.
 #işlem sırasında birleşimini kullanıyoruz
-import webbrowser#web sayfasını kullanabilmek için import işlemini yaptık
+import webbrowser#web sayfasını kullanabilmek için import işlemini yaptık web browser da siteye bağlantı sağlamak için tanımladığımız kütüphanemiz.
 
 
 
@@ -178,7 +178,7 @@ class Otomasyon():
         dosya.write("Tarih: "+ str(tarih.day)+"/"+str(tarih.month)+"/"+str(tarih.year)+"\n")
         dosya.write("------------\n")
 
-        print("\nTeşekkür ederiz.\nArıza talebiniz başarı ile oluşturulmuştur.\n")
+        print("\nTeşekkür ederiz.\nArıza talebiniz başarı ile oluşturulmuştur.\n") #talep alındığına dağir terminale yazdırıp bilgilendiriyoruz.
 
         time.sleep(2) 
         print("lütfen bekleyiniz..")
@@ -204,5 +204,5 @@ class Otomasyon():
 
 otomasyon = Otomasyon("Teknik Servis Otomasyonu")    #otomasyonu tanımladık
 
-while otomasyon.calisma: #döngüye sokuyoruz.
+while otomasyon.calisma: # sonsuz döngüye sokuyoruz.
     otomasyon.program()
